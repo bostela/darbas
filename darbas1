@@ -1,0 +1,8 @@
+kintamasis = 1
+kintamasis = 2
+
+def funkcija ():
+    print(kintamasis1)
+    print(kintamasis2)
+    print(f'test:{kintamasis2}{kintamasis1}')
+    print(f'test:{}{}'.format{kintamasis2, kintamasis1})
