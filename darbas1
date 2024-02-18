@@ -50,3 +50,6 @@ if pasirinkimas in ('1', '2', '3', '4'):
         elif pasirinkimas == '4':
             print("Rezultatas:", dalinti())
 
+tęsti = input("Ar norite atlikti kitą skaičiavimą? (taip/ne): ")
+        if tęsti.lower() != 'taip':
+            break
