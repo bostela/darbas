@@ -30,4 +30,23 @@ print("4. Dalinti")
 
 while True:
     pasirinkimas = input("Įveskite pasirinkimą (1/2/3/4): ")
+if pasirinkimas in ('1', '2', '3', '4'):
+        try:
+            kintamasis1 = float(input("Įveskite pirmą kintamąjį: "))
+            kintamasis2 = float(input("Įveskite antrą kintamąjį: "))
+        except ValueError:
+            print("Neteisinga įvestis. Prašome įvesti skaičių.")
+            continue
+
+        if pasirinkimas == '1':
+            print("Rezultatas:", sudeti())
+
+        elif pasirinkimas == '2':
+            print("Rezultatas:", atimti())
+
+        elif pasirinkimas == '3':
+            print("Rezultatas:", dauginti())
+
+        elif pasirinkimas == '4':
+            print("Rezultatas:", dalinti())
 
