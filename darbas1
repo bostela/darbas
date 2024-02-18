@@ -6,3 +6,18 @@ def funkcija ():
     print(kintamasis2)
     print(f'test:{kintamasis2}{kintamasis1}')
     print(f'test:{}{}'.format{kintamasis2, kintamasis1})
+
+def sudeti():
+    return kintamasis1 + kintamasis2
+
+def atimti():
+    return kintamasis1 - kintamasis2
+
+def dauginti():
+    return kintamasis1 * kintamasis2
+
+def dalinti():
+    if kintamasis2 != 0:
+        return kintamasis1 / kintamasis2
+    else:
+        return "Dalyba iš nulio negalima"
