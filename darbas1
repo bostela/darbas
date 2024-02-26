@@ -1,11 +1,17 @@
-kintamasis = 1
-kintamasis = 2
+from flask import Flask, request
+app = Flask(__name__)
 
-def funkcija ():
+if __name__ == "__main__":
+    app.run()
+
+kintamasis1 = 1
+kintamasis2 = 2
+
+def funkcija():
     print(kintamasis1)
     print(kintamasis2)
-    print(f'test:{kintamasis2}{kintamasis1}')
-    print(f'test:{}{}'.format{kintamasis2, kintamasis1})
+    print(f'test: {kintamasis2} {kintamasis1}')
+    print(f'test: {kintamasis2} {kintamasis1}')
 
 def sudeti():
     return kintamasis1 + kintamasis2
@@ -30,7 +36,7 @@ print("4. Dalinti")
 
 while True:
     pasirinkimas = input("Įveskite pasirinkimą (1/2/3/4): ")
-if pasirinkimas in ('1', '2', '3', '4'):
+    if pasirinkimas in ('1', '2', '3', '4'):
         try:
             kintamasis1 = float(input("Įveskite pirmą kintamąjį: "))
             kintamasis2 = float(input("Įveskite antrą kintamąjį: "))
@@ -50,6 +56,6 @@ if pasirinkimas in ('1', '2', '3', '4'):
         elif pasirinkimas == '4':
             print("Rezultatas:", dalinti())
 
-tęsti = input("Ar norite atlikti kitą skaičiavimą? (taip/ne): ")
+        tęsti = input("Ar norite atlikti kitą skaičiavimą? (taip/ne): ")
         if tęsti.lower() != 'taip':
             break
