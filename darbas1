@@ -1,32 +1,41 @@
 from flask import Flask, request
 app = Flask(__name__)
 
+skaicius = 0 # apsirasome kintamaji ( Globalus )
+
+def sudetis(pirmas,antras):
+        return pirmas+antras
+@app.route("/skaicius") # Route 3
+def skaiciavimo():
+    #UZKLAUSA. ARGUMENTAI. METODAS()
+    skaicius = request.args.get("test") ### Pasiimam argumenta is URL pvz.: /skaicius?test=100
+    skaicius2 = request.args.get("test2") ### Pasiimam argumenta 2 is URL pvz.: /skaicius?test2=100
+
+    suma = sudetis(int(skaicius2),int(skaicius))
+
+    return f"Tavo ivestas skaicius: {suma}"
+
 if __name__ == "__main__":
     app.run()
 
-kintamasis1 = 1
-kintamasis2 = 2
 
-def funkcija():
-    print(kintamasis1)
-    print(kintamasis2)
-    print(f'test: {kintamasis2} {kintamasis1}')
-    print(f'test: {kintamasis2} {kintamasis1}')
-
-def sudeti():
+def sudeti(kintamasis1, kintamasis2):
     return kintamasis1 + kintamasis2
 
-def atimti():
+def atimti(kintamasis1, kintamasis2):
     return kintamasis1 - kintamasis2
 
-def dauginti():
+def dauginti(kintamasis1, kintamasis2):
     return kintamasis1 * kintamasis2
 
-def dalinti():
+def dalinti(kintamasis1, kintamasis2):
     if kintamasis2 != 0:
         return kintamasis1 / kintamasis2
     else:
         return "Dalyba iš nulio negalima"
+
+kintamasis1 = 0
+kintamasis2 = 0
 
 print("Pasirinkite veiksmą:")
 print("1. Sudėti")
@@ -45,16 +54,16 @@ while True:
             continue
 
         if pasirinkimas == '1':
-            print("Rezultatas:", sudeti())
+            print("Rezultatas:", sudeti(kintamasis1, kintamasis2))
 
         elif pasirinkimas == '2':
-            print("Rezultatas:", atimti())
+            print("Rezultatas:", atimti(kintamasis1, kintamasis2))
 
         elif pasirinkimas == '3':
-            print("Rezultatas:", dauginti())
+            print("Rezultatas:", dauginti(kintamasis1, kintamasis2))
 
         elif pasirinkimas == '4':
-            print("Rezultatas:", dalinti())
+            print("Rezultatas:", dalinti(kintamasis1, kintamasis2))
 
         tęsti = input("Ar norite atlikti kitą skaičiavimą? (taip/ne): ")
         if tęsti.lower() != 'taip':
